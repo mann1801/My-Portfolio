@@ -1,8 +1,9 @@
 import { prisma } from '@/lib/prisma';
+import type { ContactMessage } from '@prisma/client';
 import { FaUsers, FaEnvelope, FaProjectDiagram } from 'react-icons/fa';
 
 export default async function AdminDashboard() {
-    const [messagesCount, projectsCount, skillsCount, messages] = await Promise.all([
+    const [messagesCount, projectsCount, skillsCount, messages]: [number, number, number, ContactMessage[]] = await Promise.all([
         prisma.contactMessage.count(),
         prisma.project.count(),
         prisma.skill.count(),
