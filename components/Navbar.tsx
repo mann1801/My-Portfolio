@@ -12,14 +12,20 @@ export default function Navbar() {
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         if (href.startsWith('#')) {
             e.preventDefault();
-            const targetId = href.replace('#', '');
-            const elem = document.getElementById(targetId);
-            if (elem) {
-                elem.scrollIntoView({ behavior: 'smooth' });
-                window.history.pushState(null, '', href);
-            }
+            setMobileMenuOpen(false);
+            
+            // Small delay to allow menu to close smoothly before scrolling
+            setTimeout(() => {
+                const targetId = href.replace('#', '');
+                const elem = document.getElementById(targetId);
+                if (elem) {
+                    elem.scrollIntoView({ behavior: 'smooth' });
+                    window.history.pushState(null, '', href);
+                }
+            }, 100);
+        } else {
+            setMobileMenuOpen(false);
         }
-        setMobileMenuOpen(false);
     };
 
     const navLinks = [
