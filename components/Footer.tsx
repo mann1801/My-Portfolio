@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
 
 export default function Footer() {
     const year = new Date().getFullYear();
@@ -11,7 +11,7 @@ export default function Footer() {
                     MANN<span className="text-primary">SONI</span>
                 </h2>
 
-                <div className="flex gap-6 mb-8 text-gray-400">
+                <div className="flex gap-6 mb-6 text-gray-400">
                     <a href="https://github.com/mann1801" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                         <FaGithub size={24} />
                     </a>
@@ -23,6 +23,15 @@ export default function Footer() {
                             <FaEnvelope size={24} />
                         </a>
                     )}
+                    <a href="tel:+917861909355" className="hover:text-white transition-colors">
+                        <FaPhone size={24} />
+                    </a>
+                </div>
+
+                <div className="flex flex-col items-center gap-2 mb-4">
+                    <a href="tel:+917861909355" className="text-gray-400 hover:text-primary transition-colors text-sm">
+                        +91 7861909355
+                    </a>
                 </div>
 
                 <p className="text-gray-500 text-sm text-center">
