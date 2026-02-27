@@ -1,0 +1,80 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Admin {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  password_hash String
+  createdAt     DateTime @default(now())
+}
+
+model Skill {
+  id          String   @id @default(cuid())
+  category    String
+  name        String
+  proficiency Int
+  icon        String?
+  createdAt   DateTime @default(now())
+}
+
+model Project {
+  id                    String   @id @default(cuid())
+  title                 String
+  description           String
+  tech_stack            String[]
+  architecture_overview String?
+  github_link           String?
+  live_link             String?
+  featured              Boolean  @default(false)
+  createdAt             DateTime @default(now())
+}
+
+model Hackathon {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  role        String
+  year        Int
+  createdAt   DateTime @default(now())
+}
+
+model Certification {
+  id        String   @id @default(cuid())
+  name      String
+  issuer    String
+  year      Int
+  createdAt DateTime @default(now())
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+}
+
+model Education {
+  id          String   @id @default(cuid())
+  degree      String
+  institution String
+  period      String
+  gpa         Float
+  maxGpa      Float
+  status      String
+  createdAt   DateTime @default(now())
+}
+
+model Experience {
+  id          String   @id @default(cuid())
+  role        String
+  company     String
+  duration    String
+  description String
+  createdAt   DateTime @default(now())
+}
