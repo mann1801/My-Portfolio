@@ -1,7 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import type { Certification } from '@prisma/client';
+type Certification = {
+  id: string;
+  name: string;
+  issuer: string;
+  year: number;
+  createdAt: string; // API returns JSON, so it's string not Date
+};
 import { FaPlus, FaTrash, FaEdit } from 'react-icons/fa';
 
 export default function CertificationsAdmin() {
