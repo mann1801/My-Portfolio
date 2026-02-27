@@ -9,6 +9,8 @@ import Education from '@/components/Education';
 import Achievements from '@/components/Achievements';
 import Contact from '@/components/Contact';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
   const skills = await prisma.skill.findMany({ orderBy: { proficiency: 'desc' } });
   const projects = await prisma.project.findMany({ orderBy: { createdAt: 'desc' }, where: { featured: true } });
