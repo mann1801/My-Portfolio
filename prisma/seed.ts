@@ -107,6 +107,20 @@ async function main() {
     await prisma.education.create({ data: edu });
   }
 
+  // 4.5. Experience
+  const experiences = [
+    {
+      role: 'Full Stack Developer Intern',
+      company: 'Tech Startup Inc.',
+      duration: 'June 2024 - Present',
+      description: 'Developed and maintained web applications using React, Node.js, and PostgreSQL.\nImplemented RESTful APIs and integrated third-party services.\nCollaborated with cross-functional teams to deliver high-quality software solutions.'
+    }
+  ];
+
+  for (const exp of experiences) {
+    await prisma.experience.create({ data: exp });
+  }
+
   // 5. Hackathons
   const hackathons = [
     { name: 'Nirma University Hackathon', description: 'Blockchain Extension Wallet', role: 'Developer', year: 2024 },

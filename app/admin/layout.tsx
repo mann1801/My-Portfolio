@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { FaSignOutAlt, FaHome, FaChalkboardTeacher, FaProjectDiagram, FaTrophy, FaCertificate, FaGraduationCap } from 'react-icons/fa';
+import { FaSignOutAlt, FaHome, FaChalkboardTeacher, FaProjectDiagram, FaTrophy, FaCertificate, FaGraduationCap, FaBriefcase } from 'react-icons/fa';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
     const router = useRouter();
@@ -10,6 +10,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     const navLinks = [
         { name: 'Dashboard', href: '/admin', icon: FaHome },
         { name: 'Education', href: '/admin/education', icon: FaGraduationCap },
+        { name: 'Experience', href: '/admin/experience', icon: FaBriefcase },
         { name: 'Skills', href: '/admin/skills', icon: FaChalkboardTeacher },
         { name: 'Projects', href: '/admin/projects', icon: FaProjectDiagram },
         { name: 'Hackathons', href: '/admin/hackathons', icon: FaTrophy },
