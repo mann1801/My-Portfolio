@@ -1,7 +1,15 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import type { Skill } from '@prisma/client';
+
+type Skill = {
+  id: string;
+  category: string;
+  name: string;
+  proficiency: number;
+  icon?: string | null;
+  createdAt: string;
+};
 import { FaPlus, FaTrash, FaEdit } from 'react-icons/fa';
 
 export default function SkillsAdmin() {

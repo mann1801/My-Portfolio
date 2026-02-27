@@ -1,7 +1,18 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import type { Project } from '@prisma/client';
+
+type Project = {
+  id: string;
+  title: string;
+  description: string;
+  tech_stack: string[];
+  architecture_overview?: string | null;
+  github_link?: string | null;
+  live_link?: string | null;
+  featured: boolean;
+  createdAt: string;
+};
 import { FaPlus, FaTrash, FaEdit } from 'react-icons/fa';
 
 export default function ProjectsAdmin() {

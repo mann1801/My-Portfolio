@@ -1,7 +1,17 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import type { Education } from '@prisma/client';
+
+type Education = {
+  id: string;
+  degree: string;
+  institution: string;
+  period: string;
+  gpa: number;
+  maxGpa: number;
+  status: string;
+  createdAt: string;
+};
 import { FaPlus, FaTrash, FaEdit } from 'react-icons/fa';
 
 export default function EducationAdmin() {

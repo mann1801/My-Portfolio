@@ -1,7 +1,23 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import type { Hackathon, Certification } from '@prisma/client';
+
+type Hackathon = {
+  id: string;
+  name: string;
+  description: string;
+  role: string;
+  year: number;
+  createdAt: string;
+};
+
+type Certification = {
+  id: string;
+  name: string;
+  issuer: string;
+  year: number;
+  createdAt: string;
+};
 import { FaTrophy, FaCertificate } from 'react-icons/fa';
 
 export default function Achievements({ hackathons, certifications }: { hackathons: Hackathon[], certifications: Certification[] }) {

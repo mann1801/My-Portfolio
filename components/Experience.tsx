@@ -1,7 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import type { Experience } from '@prisma/client';
+
+type Experience = {
+  id: string;
+  role: string;
+  company: string;
+  duration: string;
+  description: string;
+  createdAt: string;
+};
 import { FaBriefcase } from 'react-icons/fa';
 
 export default function Experience({ experience }: { experience: Experience[] }) {

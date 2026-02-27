@@ -1,7 +1,15 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import type { Hackathon } from '@prisma/client';
+
+type Hackathon = {
+  id: string;
+  name: string;
+  description: string;
+  role: string;
+  year: number;
+  createdAt: string;
+};
 import { FaPlus, FaTrash, FaEdit } from 'react-icons/fa';
 
 export default function HackathonsAdmin() {

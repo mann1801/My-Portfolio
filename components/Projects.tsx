@@ -1,7 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import type { Project } from '@prisma/client';
+
+type Project = {
+  id: string;
+  title: string;
+  description: string;
+  tech_stack: string[];
+  architecture_overview?: string | null;
+  github_link?: string | null;
+  live_link?: string | null;
+  featured: boolean;
+  createdAt: string;
+};
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 export default function Projects({ projects }: { projects: Project[] }) {

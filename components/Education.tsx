@@ -2,7 +2,26 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import type { Education as EducationType, Skill } from '@prisma/client';
+
+type EducationType = {
+  id: string;
+  degree: string;
+  institution: string;
+  period: string;
+  gpa: number;
+  maxGpa: number;
+  status: string;
+  createdAt: string;
+};
+
+type Skill = {
+  id: string;
+  category: string;
+  name: string;
+  proficiency: number;
+  icon?: string | null;
+  createdAt: string;
+};
 import { FaGraduationCap, FaCode } from 'react-icons/fa';
 
 export default function Education({ education, skills }: { education: EducationType[], skills: Skill[] }) {
