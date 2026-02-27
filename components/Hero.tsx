@@ -88,7 +88,7 @@ export default function Hero() {
                         className="flex flex-col sm:flex-row items-center justify-center gap-6"
                     >
                         <a
-                            href="/cv.pdf"
+                            href="/Mann_Soni_CV.pdf"
                             download="Mann_Soni_CV.pdf"
                             className="group relative px-8 py-4 bg-primary text-white rounded-full font-medium text-lg overflow-hidden w-full sm:w-auto flex items-center justify-center gap-2 transition-transform hover:scale-105"
                         >
