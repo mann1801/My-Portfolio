@@ -7,14 +7,14 @@ datasource db {
 }
 
 model Admin {
-  id            String   @id
+  id            String   @id @default(cuid())
   email         String   @unique
   password_hash String
   createdAt     DateTime @default(now())
 }
 
 model Certification {
-  id        String   @id
+  id        String   @id @default(cuid())
   name      String
   issuer    String
   year      Int
@@ -22,7 +22,7 @@ model Certification {
 }
 
 model ContactMessage {
-  id        String   @id
+  id        String   @id @default(cuid())
   name      String
   email     String
   message   String
@@ -30,7 +30,7 @@ model ContactMessage {
 }
 
 model Education {
-  id          String   @id
+  id          String   @id @default(cuid())
   degree      String
   institution String
   period      String
@@ -41,7 +41,7 @@ model Education {
 }
 
 model Experience {
-  id          String   @id
+  id          String   @id @default(cuid())
   role        String
   company     String
   duration    String
@@ -50,7 +50,7 @@ model Experience {
 }
 
 model Hackathon {
-  id          String   @id
+  id          String   @id @default(cuid())
   name        String
   description String
   role        String
@@ -59,7 +59,7 @@ model Hackathon {
 }
 
 model Project {
-  id                    String   @id
+  id                    String   @id @default(cuid())
   title                 String
   description           String
   tech_stack            String[]
@@ -71,7 +71,7 @@ model Project {
 }
 
 model Skill {
-  id          String   @id
+  id          String   @id @default(cuid())
   category    String
   name        String
   proficiency Int
